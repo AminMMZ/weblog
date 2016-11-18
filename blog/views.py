@@ -27,7 +27,7 @@ def show_post(request):
         if form.is_valid():
             cm = Comment(post=pst,name=form.cleaned_data['name'],text=form.cleaned_data['text'])
             cm.save()
-            comments = pst.comment_set.all()
+    comments = pst.comment_set.all()
     comment_form = CommentForm()
     count = len(comments)
     template = 'post.html'
